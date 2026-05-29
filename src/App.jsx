@@ -1,11 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import Home from './Pages/Home.jsx'
+import Auth from './Pages/Auth.jsx'
+import Checkout from './Pages/Checkout.jsx'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './Component/Navbar.jsx'
 
 function App() {
- 
+ return (
+    <div className='app '>
+        <Navbar />
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/auth' element={<Auth />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='*' element={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}><h1>404 Not Found</h1></div>} />
+        </Routes>
+    </div>
+ )
 }
 
 export default App
