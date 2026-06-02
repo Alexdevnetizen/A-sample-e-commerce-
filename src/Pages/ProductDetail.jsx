@@ -10,7 +10,7 @@ export default function ProductDetail() {
 
   useEffect(() => {
     const fetchedProduct = getProductById(id);
-    setProduct(fetchedProduct || null);
+    setProduct(fetchedProduct);
   }, [id]);
 
   
