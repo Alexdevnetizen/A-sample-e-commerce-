@@ -4,6 +4,7 @@ import Auth from './Pages/Auth.jsx'
 import Checkout from './Pages/Checkout.jsx'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './Component/Navbar.jsx'
+import ProductDetail from './Pages/ProductDetail.jsx'
 import { AuthProvider } from './Context/AuthContext.jsx'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path='/auth' element={<Auth />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='*' element={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}><h1>404 Not Found</h1></div>} />
+            <Route path='/product/:id' element={<ProductDetail/>} />
         </Routes>
     </div>
    </AuthProvider>

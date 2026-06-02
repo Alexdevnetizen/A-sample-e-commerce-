@@ -234,6 +234,56 @@ body {
   margin-bottom: 2rem;
 }
 
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-value {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Make product detail stack on small screens */
+@media (max-width: 900px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-image img {
+    height: 420px;
+    object-fit: cover;
+  }
+}
+
 .auth-container {
   max-width: 400px;
   margin: 0 auto;

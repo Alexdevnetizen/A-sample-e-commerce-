@@ -76,3 +76,7 @@ const products = [
 export default function getProducts() {
   return products
 }
+
+export function getProductById(id) {
+  return products.find((product) => product.id === parseInt(id));
+}
