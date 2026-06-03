@@ -5,11 +5,13 @@ import Checkout from './Pages/Checkout.jsx'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './Component/Navbar.jsx'
 import ProductDetail from './Pages/ProductDetail.jsx'
+import { CartProvider } from './Context/CartContext.jsx'
 import { AuthProvider } from './Context/AuthContext.jsx'
 
 function App() {
  return (
    <AuthProvider>
+    <CartProvider>
     <div className='app '>
         <Navbar />
         <Routes>
@@ -20,6 +22,7 @@ function App() {
             <Route path='/product/:id' element={<ProductDetail/>} />
         </Routes>
     </div>
+   </CartProvider>
    </AuthProvider>
  )
 }

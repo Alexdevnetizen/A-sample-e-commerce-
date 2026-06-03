@@ -411,9 +411,10 @@ body {
 
 .checkout-item-controls {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
 }
 
 .quantity-controls {
@@ -456,10 +457,26 @@ body {
   background: #fff;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   height: fit-content;
   position: sticky;
   top: 100px;
+}
+
+.checkout-summary-note {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-secondary.btn-small {
+  padding: 0.5rem 0.85rem;
 }
 
 .checkout-total {
@@ -601,6 +618,91 @@ body {
   .checkout-item {
     flex-direction: column;
   }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar-container {
+    padding: 0 1.25rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.35rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .navbar-link {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-auth {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .navbar-user-row {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .navbar-user-row .btn {
+    width: auto;
+  }
+
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .navbar-container {
+    gap: 0.75rem;
+  }
+
+  .navbar-links {
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+  }
+
+  .navbar-auth {
+    margin-top: 0.5rem;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .navbar-user-row {
+    justify-content: flex-start;
+    gap: 0.65rem;
+  }
+
+  .navbar-user-row .btn,
+  .navbar-auth-link .btn {
+    padding: 0.5rem 0.85rem;
+    min-width: 100px;
+  }
+
+  .navbar-link {
+    padding: 0.35rem 0;
+  }
+
 
   .checkout-item-controls {
     align-items: flex-start;

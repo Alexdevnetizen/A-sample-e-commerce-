@@ -1,12 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductById } from "../data/Products.js";
+import useCart from "../Context/CartContext.jsx";
 
 export default function ProductDetail() {
+  const { cartItems, addToCart } = useCart();
+  
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
-  const [qty, setQty] = useState(1);
 
   useEffect(() => {
     const fetchedProduct = getProductById(id);
@@ -16,16 +18,10 @@ export default function ProductDetail() {
   
 
   if (!product) {
-    return (
-      <div className="page">
-        <div className="container">
-          <div className="auth-container">
-            <h2>Product not found</h2>
-          </div>
-        </div>
-      </div>
-    );
+    return <h1>Loading...</h1>;
   }
+  const productItem = cartItems.find((item) => item.id === product.id);
+  const productQty = productItem ? `(${productItem.quantity})` : "";
 
   return (
     <div className="page">
@@ -41,25 +37,12 @@ export default function ProductDetail() {
             <p className="product-detail-description">{product.description}</p>
 
             <div className="product-detail-actions">
-              <div className="quantity-controls">
-                <button
-                  className="quantity-btn"
-                  onClick={() => setQty((q) => Math.max(1, q - 1))}
-                >
-                  -
-                </button>
-                <div className="quantity-value">{qty}</div>
-                <button
-                  className="quantity-btn"
-                  onClick={() => setQty((q) => q + 1)}
-                >
-                  +
-                </button>
-              </div>
-
               <div style={{ display: "flex", gap: "0.5rem" }}>
-                <button className="btn btn-primary" >
-                  Add to Cart
+                <button
+                  className="btn btn-primary"
+                  onClick={() => addToCart(product.id)}
+                >
+                  Add to Cart {productQty}
                 </button>
                 <button
                   className="btn btn-secondary"
